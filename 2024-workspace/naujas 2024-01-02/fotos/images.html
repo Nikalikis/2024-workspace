@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+        html {
+            /* Slinkimo animacijos įgalinimas */
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-size: 24px;
+        }
+
+        /* Nurodymas kokios savybės turėtų būti priskirtos užvedos ant elemento su pele */
+        nav a:hover {
+            color: rgb(231, 171, 91);
+        }
+
+        nav a:active {
+            color: rgb(233, 59, 16);
+        }
+
+        nav a:visited {
+            color: rgb(36, 230, 255);
+
+        }
+
+        header {
+            display: flex;
+
+
+
+            gap: 50px;
+            padding: 15px 0;
+        }
+
+        section {
+            height: 800px;
+        }
+
+        /* ID atributo selektorius */
+        #show-all {
+        
+        }
+
+        #Sea {}
+
+        #Sand {}
+
+        #career {}
+
+        #Others {}
+
+        .courusel {
+
+            display: flex;
+            flex-wrap: wrap;
+        }
+        div.courusel{
+            display: flex;
+            flex: wrap wrap;
+        }
+        ul{
+           gap: 20px ;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+
+        <nav>
+            <ul>
+                <li><a href="#Show-all">Show-all</a></li>
+                <li><a href="#Sea">Sea</a></li>
+                <li><a href="#Sand">Sand</a></li>
+                <li><a href="#Others">Others</a></li>
+
+            </ul>
+        </nav>
+        <div class="courusel">
+
+            <img src="sea.jpg" alt="Sea.jpg">
+           <div>Lorem, ipsum dolor.</div>
+            <img src="sea2.jpg" alt="sea2.jpg">
+            <div>Lorem, ipsum dolor.</div>
+            <img src="sand.jpg" alt="">
+            <div>Lorem, ipsum.</div>
+            <img src="sand2.jpg" alt="">
+            <div>Lorem ipsum dolor sit.</div>
+            <img src="other.jpg" alt="">
+            <div>Lorem ipsum dolor sit amet.</div>
+            <img src="other2.jpg" alt="">
+            <div>Lorem ipsum dolor sit amet.
+            </div>
+        </div>
+    </header>
+    <main id="show Show-all">
+        <section id="#Show-all">Lorem ipsum dolor sit amet.</section>
+        <section id="#Sea"></section>
+        <section id="#sea2"></section>
+        <section id="#other"></section>
+        <section id="#other2"></section>
+       
+    <main id="show-all sea sea2">
+        
+        <section id="#Sea"></section>
+        <section id="#sea2"></section>
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+    </main>
+</body>
+
+</html>
