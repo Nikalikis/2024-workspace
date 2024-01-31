@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String uzduotys</title>
+</head>
+
+<body>
+    <script>
+
+function rand(min, max) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+        document.write(`<h2>Pirmoji uzduotis</h2>`);
+
+        let firstname = `Iron`;
+        let lastname = `Man`;
+        console.log(firstname.length)
+        console.log(lastname.length)
+        if (firstname.length < lastname.length) {
+            document.write(`<p>Iron</p>`)
+        }
+        else (
+            document.write(`<p>Man</p>`)
+        )
+
+
+        document.write(`<h2>Antroji uzduotis</h2>`);
+
+        firstname = 'Iron '
+        lastname = 'Man'
+        document.write(firstname.toUpperCase());
+        document.write(lastname.toLowerCase());
+
+
+
+        document.write(`<h2>Trecioji uzduotis</h2>`);
+        firstname = 'Iron '
+        lastname = 'Man'
+        let nameinitials = firstname[0] + lastname[0];
+        document.write(`<p>${nameinitials}</p>`);
+
+
+        document.write(`<h2>Ketvirtoji uzduotis</h2>`);
+        firstname = 'Iron';
+        lastname = 'Man';
+        console.log(firstname.slice(-3));
+        console.log(lastname.slice(-3));
+        document.write(firstname.slice(1));
+        document.write(lastname);
+        console.log(firstname,lastname);
+
+        document.write(`<h2>Penktoji uzduotis</h2>`);
+
+        let paragraph = `An American in Paris`
+        let first = paragraph.replaceAll(`A`, `*`);
+        first = first.replaceAll(`a`, `*`);
+        document.write(first);
+        console.log(first)
+        
+
+
+        document.write(`<h2>Sestoji uzduotis</h2>`);
+       paragraph =  `An American in Paris`
+       paragraph = paragraph.replaceAll(`A`,``)
+       paragraph = paragraph.replaceAll(`a`, ``)
+       document.write(paragraph)
+       console.log(paragraph);
+
+        document.write(`<h2>Septintoji uzduotis</h2>`);
+
+        paragraph =  `An American in Paris  `
+       paragraph = paragraph.replaceAll(`A`,``)
+       paragraph = paragraph.replaceAll(`a`, ``)
+       paragraph = paragraph.replaceAll(`i`, ``)
+       paragraph = paragraph.replaceAll(`e`, ``)
+       document.write(paragraph)
+
+       let breakf = "Beakfast at Tiffanys   "
+       breakf = breakf.replaceAll(`A`,``)
+       breakf = breakf.replaceAll(`a`, ``)
+       breakf = breakf.replaceAll(`i`, ``)
+       breakf = breakf.replaceAll(`e`, ``)
+       document.write(breakf)
+
+       let metai = `2001: A Space in Odyssey `
+       metai =metai.replaceAll(`A`,``)
+       metai = metai.replaceAll(`a`, ``)
+       metai = metai.replaceAll(`i`, ``)
+       metai = metai.replaceAll(`O`, ``)
+       metai = metai.replaceAll(`e`, ``)
+       document.write(metai)
+
+       let its = `It's a Wonderful Life `
+       its = its.replaceAll(`A`,``)
+       its = its.replaceAll(`a`, ``)
+       its = its.replaceAll(`i`, ``)
+       its = its.replaceAll(`I`, ``)
+       its = its.replaceAll(`e`, ``)
+       its = its.replaceAll(`u`, ``)
+       its = its.replaceAll(`o`, ``)
+       console.log(its,metai,breakf,paragraph);
+
+       document.write(`<h2>Astuntoji uzduotis</h2>`);
+       let string = `Star Wars: Episode - A New Hope`;
+       string = `Star Wars: Episode ${rand(0,5)} ${rand(1,9)} - A New Hope`;
+        console.log('Epizodo numeris:', string[19],string[21]);
+       
+       document.write(`<h2>Devintoji uzduotis</h2>`);
+
+       
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

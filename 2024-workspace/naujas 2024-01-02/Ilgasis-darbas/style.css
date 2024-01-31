@@ -172,6 +172,10 @@ section.home .buttons {
     justify-content: center;
     /* height: 398px; */
 }
+.container1 .text1{
+    gap: 20px;
+    display: inline;
+}
 
 .container1 .text1 h4 {
     color: var(--primary-color);
@@ -229,4 +233,26 @@ width: 226px;
 }
 .box-blue h4{
     color: white;
+}
+.arrow{
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    display: flex;
+    justify-content: right;
+    align-items:baseline;   
+}
+.container2{
+    width: 1440px;
+    height: 643px;
+    flex-shrink: 0;
+    background: linear-gradient(180deg, #545BE8 0%, #272DB0 100%);
+}
+.circle{
+    width: 507.172px;
+height: 506.732px;
+flex-shrink: 0;
+border-radius: 507.172px;
+background: #C4C4C4;
+
 }

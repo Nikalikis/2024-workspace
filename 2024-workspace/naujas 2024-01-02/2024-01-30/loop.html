@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Užduočių sprendimai</title>
+</head>
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        // Sukurkite 4 kintamuosius, kurie saugotų jūsų vardą, pavardę, gimimo metus ir šiuos metus (nebūtinai tikrus). 
+        // Parašykite kodą, kuris pagal gimimo metus paskaičiuotų jūsų amžių ir naudodamas vardo ir pavardės kintamuosius 
+        // |atspausdintų tokį sakinį :
+        // "Aš esu Vardenis Pavardenis. Man yra XX metai(ų)".
+
+        document.write('<h2>Pirmoji užduotis</h2>');
+
+        let vardas = 'Vilius';
+        let pavarde = 'Ramulionis';
+        let gimtadienis = 1950;
+        let metai = 2024;
+        // let result = metai - gimtadienis;
+        
+        document.write(`Aš esu ${vardas} ${pavarde}. Man yra ${metai - gimtadienis} metai(ų)`);
+    
+        //Naudokite funkcija rand(). Sukurkite du kintamuosius ir naudodamiesi funkcija rand() 
+        //jiems priskirkite atsitiktines reikšmes nuo 0 iki 4. Didesnę reikšmę padalinkite iš 
+        //mažesnės. Atspausdinkite rezultatą naršyklėje. 
+        // Papildomai:
+        // Suapvalinkite skaičių iki dviejų skaičių po kablelio.
+
+        document.write('<h2>Antroji užduotis</h2>');
+
+        let pirmas = rand(0, 4);
+        let antras = rand(0, 4);
+        
+        document.write(`<p>Gautos reikšmės: ${pirmas} ${antras}</p>`);
+
+        // Pirmas scenarijus: Pirmas skaičius didesnis už antrą
+        // Antras scenarijus: Skaičiai yra lygūs
+        // Trečias scenarijus: Antras didesnis už pirmą
+
+        if(pirmas > antras) {
+            if(antras === 0) {
+                document.write(`<p>Dalyba iš nulio negalima</p>`);
+            } else {
+                document.write(`<p>Rezultatas: ${(pirmas / antras).toFixed(2)}</p>`);
+            }
+        } else if(pirmas === antras) {
+            document.write(`<p>Skaičiai yra lygūs</p>`);
+        } else {
+            if(pirmas === 0) {
+                document.write(`<p>Rezultatas: 0</p>`);
+            } else {
+                document.write(`<p>Rezultatas: ${(antras / pirmas).toFixed(2)}</p>`);
+            }
+        }
+
+        document.write('<h2>Trečioji užduotis</h2>');
+        // Sukurkite tris kintamuosius ir naudodamiesi funkcija rand() jiems priskirkite 
+        //atsitiktines reikšmes nuo 0 iki 25. Raskite ir atspausdinkite kintamąjį turintį 
+        //vidurinę reikšmę.
+
+        let pirmasSkaicius = rand(0, 25);
+        let antrasSkaicius = rand(0, 25);
+        let treciasSkaicius = rand(0, 25);
+
+        console.log('Gautos reikšmės:', pirmasSkaicius, antrasSkaicius, treciasSkaicius);
+        
+        // let pirmasSkaicius = 11;
+        // let antrasSkaicius = 19;
+        // let treciasSkaicius = 2;
+
+        if(pirmasSkaicius <= antrasSkaicius) {
+            // Antras skaicius didesnis nei pirmas
+            if(antrasSkaicius <= treciasSkaicius) {
+                document.write('<h3>Antras skaičius yra vidurinis</h3>');
+            } else {
+                // Antras skaicius yra didesnis nei trecias
+                if(pirmasSkaicius <= treciasSkaicius) {
+                    document.write('<h3>Trecias skaičius yra vidurinis</h3>');
+                } else {
+                    document.write('<h3>Pirmas skaičius yra vidurinis</h3>');
+                }
+            }
+        } else {
+            // Pirmas skaicius didesnis nei antras
+            if(pirmasSkaicius <= treciasSkaicius) {
+                document.write('<h3>Pirmas skaičius yra vidurinis</h3>');
+            } else {
+                document.write('<h3>Antras skaičius yra vidurinis</h3>');
+            }
+        }
+        
+        // Sukurkite keturis kintamuosius ir ​rand()​ funkcija sugeneruokite jiems 
+        // reikšmes nuo 0 iki 2. Suskaičiuokite kiek yra nulių, vienetų ir dvejetų. 
+        // (sprendimui masyvo nenaudoti).
+
+        document.write('<h2>Ketvirtoji užduotis</h2>');
+
+        pirmas = rand(0, 2);
+        antras = rand(0, 2);
+        let trecias = rand(0, 2);
+        let ketvirtas = rand(0, 2);
+        let nuliai = 0;
+        let vienetai = 0;
+        let dvejetai = 0;
+
+        document.write(`<p>Gautos reikšmės: ${pirmas} ${antras} ${trecias} ${ketvirtas}</p>`);
+
+        if(pirmas === 0) 
+            nuliai++;
+
+        if(antras === 0) 
+            nuliai++;
+
+        if(trecias === 0) 
+            nuliai++;
+
+        if(ketvirtas === 0) 
+            nuliai++;
+
+        if(pirmas === 1) 
+            vienetai++;
+
+        if(antras === 1) 
+            vienetai++;
+
+        if(trecias === 1) 
+            vienetai++;
+
+        if(ketvirtas === 1) 
+            vienetai++;
+
+        if(pirmas === 2) 
+            dvejetai++;
+
+        if(antras === 2) 
+            dvejetai++;
+
+        if(trecias === 2) 
+            dvejetai++;
+
+        if(ketvirtas === 2) 
+            dvejetai++;
+        
+        document.write(`<p>Nuliai: ${nuliai} Vienetai: ${vienetai} Dvejetai: ${dvejetai}</p>`);
+
+
+        // Naudokite funkcija rand(). Sugeneruokite atsitiktinį skaičių nuo 1 iki 6 ir jį 
+        // atspausdinkite atsitinkame h tage. Pvz skaičius 3- rezultatas: <h3>3</h3>
+        // Rezultatą atvaizduoti naršyklės lange.
+
+        document.write('<h2>Penktoji užduotis</h2>');
+
+        let skaicius = rand(1, 6);
+
+        document.write(`<h${skaicius}>${skaicius}</h${skaicius}>`);
+
+        // Naudokite funkcija rand(). Atspausdinkite 3 skaičius nuo -10 iki 10. 
+        // |Skaičiai mažesni už 0 turi būti žali, 0 - raudonas, didesni už 0 mėlyni. 
+        // Rezultatą atvaizduoti naršyklės lange.
+
+        document.write('<h2>Šeštoji užduotis</h2>');
+
+        pirmas = rand(-10, 10);
+        antras = rand(-10, 10);
+        trecias = rand(-10, 10);
+        let digit;
+        let color;
+        
+        //Pirmas sprendimas
+        // if(pirmas < 0) {
+        //     document.write(`<span style="color: green;">${pirmas}</span> `);
+        // } else if(pirmas === 0) {
+        //     document.write(`<span style="color: red;">${pirmas}</span> `);
+        // } else {
+        //     document.write(`<span style="color: blue;">${pirmas}</span> `);
+        // }
+
+        // if(antras < 0) {
+        //     document.write(`<span style="color: green;">${antras}</span> `);
+        // } else if(antras === 0) {
+        //     document.write(`<span style="color: red;">${antras}</span> `);
+        // } else {
+        //     document.write(`<span style="color: blue;">${antras}</span> `);
+        // }
+
+        // if(trecias < 0) {
+        //     document.write(`<span style="color: green;">${trecias}</span> `);
+        // } else if(trecias === 0) {
+        //     document.write(`<span style="color: red;">${trecias}</span> `);
+        // } else {
+        //     document.write(`<span style="color: blue;">${trecias}</span> `);
+        // }
+        
+        if(pirmas < 0) {
+            digit = pirmas;
+            color = 'green';
+        } else if(pirmas === 0) {
+            digit = pirmas;
+            color = 'red';
+        } else {
+            digit = pirmas;
+            color = 'blue';
+        }
+
+        document.write(`<span style="color: ${color};">${digit}</span> `);
+
+        if(antras < 0) {
+            digit = antras;
+            color = 'green';
+        } else if(antras === 0) {
+            digit = antras;
+            color = 'red';
+        } else {
+            digit = antras;
+            color = 'blue';
+        }
+
+        document.write(`<span style="color: ${color};">${digit}</span> `);
+
+        if(trecias < 0) {
+            digit = trecias;
+            color = 'green';
+        } else if(trecias === 0) {
+            digit = trecias;
+            color = 'red';
+        } else {
+            digit = trecias;
+            color = 'blue';
+        }
+
+        document.write(`<span style="color: ${color};">${digit}</span> `);
+
+        // Įmonė parduoda žvakes po 1 EUR. Perkant daugiau kaip už 1000 EUR taikoma 3 % nuolaida, 
+        // daugiau kaip už 2000 EUR - 4 % nuolaida. Parašykite programą, kuri skaičiuos žvakių kainą 
+        // ir atspausdintų atsakymą kiek žvakių ir kokia kaina perkama. Žvakių kiekį generuokite ​rand()​ 
+        // funkcija nuo 5 iki 3000.
+
+        document.write('<h2>Septintoji užduotis</h2>');
+
+        let kaina = 1;
+        let kiekis = rand(5, 3000);
+        let suma = kiekis;
+
+        document.write(`Perkamas kiekis: <strong>${kiekis}</strong>`);
+        
+        if(kiekis > 1000) {
+            suma = kiekis - kiekis * 0.03;
+        } else if (kiekis > 2000) {
+            suma = kiekis - kiekis * 0.04;
+        }
+
+        // if(kiekis > 1000) {
+        //     suma = kiekis - kiekis * 0.03;
+        // } 
+
+        // if(kiekis > 2000) {
+        //     suma = kiekis - kiekis * 0.04;
+        // }
+
+        document.write(`<p>Galutinė suma: € ${suma.toFixed(2)}</p>`);
+        
+        // Sukurkite keturis kintamuosius ir ​rand()​ funkcija sugeneruokite jiems 
+        // reikšmes nuo 0 iki 2. Suskaičiuokite kiek yra nulių, vienetų ir dvejetų. 
+        // (sprendimui masyvo nenaudoti).
+
+        i = 0;
+        let null = 0;
+        let viene = 0;
+        let dveje = 0;
+
+        while(i < 4){
+           let skaicius = rand(0,2)
+
+            console.log(skaicius);
+
+            i++;
+        }
+        
+
+
+    </script>
+</body>
+</html>

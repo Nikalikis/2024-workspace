@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>testjs</title>
+</head>
+
+<body>
+    <script>
+        function rand(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+
+        // Sukurkite keturis kintamuosius ir ​rand()​ funkcija sugeneruokite jiems 
+        // reikšmes nuo 0 iki 2. Suskaičiuokite kiek yra nulių, vienetų ir dvejetų. 
+        // (sprendimui masyvo nenaudoti).
+
+        i = 0;
+        let nuliai = 0;
+        let vienetai = 0;
+        let dvejetai = 0;
+
+        while (i < 1000) {
+            let skaicius = rand(0, 2)
+
+            if (skaicius === 0)
+                nuliai++;
+            if (skaicius === 1)
+                vienetai++;
+            if (skaicius === 2)
+                dvejetai++;
+
+            i++;
+        }
+        console.log(`nuliai;${nuliai} vienetai;${vienetai} dvejetai;${dvejetai}`)
+
+        i = 0;
+        while (i < 100) {
+            let skaicus = rand(0, 36)
+            if (skaicius % 2 === 0) {
+
+                document.write(`<div style="color: red;">${skaicius}</div>`);
+             
+            }
+            else {
+                    document.write(`<div style="color: green;">${skaicius}</div>`);
+                
+                }
+
+            i++;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <script>
+        
+
+const rows = 7;
+const columns = 11;
+
+for (let i = 0; i < rows; i++) {
+  let row = '';
+  for (let j = 0; j < columns; j++) {
+    if (i === j) {
+      // Set the color of the diagonal squares to red
+      row += '<span style="color: red;">*</span>';
+    } else {
+      row += '*';
+    }
+  }
+  console.log(row);
+  document.write(row)
+}
+
+
+
+    </script>
+    
+</body>
+</html>
