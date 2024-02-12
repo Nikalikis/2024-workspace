@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+  let masyvas = Array.from({ length: 30 }, () => Math.floor(Math.random() * (25 - 5 + 1)) + 5);
+
+  let didesniUz10 = masyvas.filter(value => value > 10).length;
+console.log('Didesnių už 10 reikšmių kiekis:', didesniUz10);
+document.write('1. Didesnių už 10 reikšmių kiekis: ' + didesniUz10 + '<br>');
+
+
+let maxReiksme = Math.max(...masyvas);
+let maxIndeksai = masyvas.reduce((acc, value, index) => (value === maxReiksme) ? acc.concat(index) : acc, []);
+console.log('Didžiausia reikšmė ir jos indeksai:', maxReiksme, maxIndeksai);
+document.write('2. Didžiausia reikšmė ir jos indeksai: ' + maxReiksme + ', [' + maxIndeksai.join(', ') + ']<br>');
+
+
+let lyginiuIndeksuSuma = masyvas.filter((value, index) => index % 2 === 0).reduce((sum, value) => sum + value, 0);
+console.log('Visų porinių indeksų reikšmių suma:', lyginiuIndeksuSuma);
+document.write('3. Visų porinių indeksų reikšmių suma: ' + lyginiuIndeksuSuma + '<br>');
+
+
+let naujasMasyvas = masyvas.map((value, index) => value - index);
+console.log('Naujas masyvas (reikšmės - indeksai):', naujasMasyvas);
+document.write('4. Naujas masyvas (reikšmės - indeksai): [' + naujasMasyvas.join(', ') + ']<br>');
+
+
+
+let papildomiElementai = Array.from({ length: 10 }, () => Math.floor(Math.random() * (25 - 5 + 1)) + 5);
+let bendrasMasyvas = [...naujasMasyvas, ...papildomiElementai];
+console.log('Bendras masyvas su papildomais elementais:', bendrasMasyvas);
+document.write('5. Bendras masyvas su papildomais elementais: [' + bendrasMasyvas.join(', ') + ']<br>');
+
+
+
+let neporiniuMasyvas = masyvas.filter((value, index) => index % 2 !== 0);
+let poriniuMasyvas = masyvas.filter((value, index) => index % 2 === 0);
+console.log('Neporinių indeksų masyvas:', neporiniuMasyvas);
+console.log('Porinių indeksų masyvas:', poriniuMasyvas);
+document.write('6. Neporinių indeksų masyvas: [' + neporiniuMasyvas.join(', ') + ']<br>');
+document.write('   Porinių indeksų masyvas: [' + poriniuMasyvas.join(', ') + ']<br>');
+
+
+
+masyvas = masyvas.map((value, index) => (index % 2 === 0 && value > 15) ? 0 : value);
+console.log('Masyvas su pakeistomis reikšmėmis (poriniams indeksams > 15 lygu 0):', masyvas);
+document.write('7. Masyvas su pakeistomis reikšmėmis (poriniams indeksams > 15 lygu 0): [' + masyvas.join(', ') + ']<br>');
+
+let pirmasDidesnisUz10Indeksas = masyvas.findIndex(value => value > 10);
+console.log('Pirmo indekso, kurio elemento reikšmė didesnė už 10:', pirmasDidesnisUz10Indeksas);
+document.write('8. Pirmo indekso, kurio elemento reikšmė didesnė už 10: ' + pirmasDidesnisUz10Indeksas + '<br>');
+
+
+masyvas = masyvas.filter((value, index) => index % 2 !== 0);
+console.log('Masyvas be elementų su poriniais indeksais:', masyvas);
+document.write('9. Masyvas be elementų su poriniais indeksais: [' + masyvas.join(', ') + ']<br>');
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laikrodis su Atsitiktiniais Skaičiais</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    #clock {
+      font-size: 3em;
+      color: #333;
+    }
+
+    .red {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="clock"></div>
+
+  <script>
+    function generateRandomNumbers() {
+      const numbers = [];
+      let countAbove150 = 0;
+
+      for (let i = 0; i < 300; i++) {
+        const randomNumber = Math.floor(Math.random() * 301);
+        numbers.push(randomNumber);
+
+        if (randomNumber > 150) {
+          countAbove150++;
+        }
+      }
+
+      const resultContainer = document.createElement('div');
+      resultContainer.id = 'clock';
+      resultContainer.textContent = numbers.join(' ');
+
+      if (countAbove150 > 0) {
+        const countAbove150Element = document.createElement('p');
+        countAbove150Element.textContent = `Didesnių už 150 skaičių kiekis: ${countAbove150}`;
+        resultContainer.appendChild(countAbove150Element);
+      }
+
+      document.body.appendChild(resultContainer);
+
+      // Paryškinkime skaičius didesnius nei 275 raudonai
+      numbers.forEach((number, index) => {
+        if (number > 275) {
+          const numberElement = resultContainer.childNodes[0].splitText(index + 1);
+          const span = document.createElement('span');
+          span.className = 'red';
+          span.textContent = number;
+          resultContainer.insertBefore(span, numberElement.nextSibling);
+        }
+      });
+    }
+
+    generateRandomNumbers();
+  </script>
+</body>
+</html>
