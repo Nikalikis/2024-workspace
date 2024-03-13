@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teleloto</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    #ball {
+        width: 50px;
+        height: 50px;
+        color: #fff;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        margin-top: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div id="ball">0</div>
+<button onclick="rollBall()">Teleloto</button>
+
+<script>
+    var luckyNumber = Math.floor(Math.random() * 101); 
+    var gameOver = false; 
+
+    function rollBall() {
+        if (!gameOver) { 
+            var ball = document.getElementById('ball');
+            var randomNumber = Math.floor(Math.random() * 101); 
+            ball.innerText = randomNumber; 
+            
+           
+            if (randomNumber === luckyNumber) {
+                ball.innerText = "Win!"; 
+                gameOver = true; 
+            } else {     
+                if (randomNumber >= 0 && randomNumber <= 19) {
+                    ball.style.backgroundColor = '#000';
+                } else if (randomNumber >= 20 && randomNumber <= 39) {
+                    ball.style.backgroundColor = 'pink';
+                } else if (randomNumber >= 40 && randomNumber <= 59) {
+                    ball.style.backgroundColor = 'red'; 
+                } else if (randomNumber >= 60 && randomNumber <= 79) {
+                    ball.style.backgroundColor = 'blue';
+                } else if (randomNumber >= 80 && randomNumber <= 100) {
+                    ball.style.backgroundColor = 'green'; 
+                }
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

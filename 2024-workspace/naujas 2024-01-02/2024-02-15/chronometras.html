@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Timer and Stopwatch</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.timer, .stopwatch {
+  text-align: center;
+}
+
+button {
+  margin-top: 10px;
+}
+
+
+  </style>
+</head>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const timerDisplay = document.getElementById('timer');
+  const stopwatchDisplay = document.getElementById('stopwatch');
+  let timerInterval;
+  let stopwatchInterval;
+  let timerSeconds = 0;
+  let stopwatchSeconds = 0;
+
+  function startTimer() {
+    timerInterval = setInterval(function() {
+      timerSeconds--;
+      if (timerSeconds >= 0) {
+        timerDisplay.textContent = formatTime(timerSeconds);
+      } else {
+        clearInterval(timerInterval);
+      }
+    }, 1000);
+  }
+
+  function startStopwatch() {
+    stopwatchInterval = setInterval(function() {
+      stopwatchSeconds++;
+      stopwatchDisplay.textContent = formatTime(stopwatchSeconds);
+    }, 1000);
+  }
+
+  function resetTimer() {
+    clearInterval(timerInterval);
+    timerSeconds = 0;
+    timerDisplay.textContent = formatTime(timerSeconds);
+  }
+
+  function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
+    return `${minutes < 10 ? '0' : ''}${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+  }
+
+  document.getElementById('startTimer').addEventListener('click', function() {
+    if (!timerInterval) {
+      timerSeconds = 60; // Change this to whatever starting time you want
+      startTimer();
+    }
+  });
+
+  document.getElementById('resetTimer').addEventListener('click', resetTimer);
+
+  document.getElementById('startStopwatch').addEventListener('click', function() {
+    if (!stopwatchInterval) {
+      startStopwatch();
+    }
+  });
+});
+
+
+</script>
+<body>
+  <div class="container">
+    <div class="timer">
+      <h1>Timer</h1>
+      <div id="timer">00:00</div>
+      <button id="startTimer">Start</button>
+      <button id="resetTimer">Reset</button>
+    </div>
+    <div class="stopwatch">
+      <h1>Stopwatch</h1>
+      <div id="stopwatch">00:00</div>
+      <button id="startStopwatch">Start</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
